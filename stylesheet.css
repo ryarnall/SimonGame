@@ -1,0 +1,57 @@
+html {
+	background: black;
+}
+
+button {
+	width: 100px;
+	height: 100px;
+	outline: none;
+	border: none;
+	opacity: .5;
+	margin: 25px;
+}
+
+button:active {
+	opacity: 1;
+	box-shadow: 5px 5px 5px gray,
+							5px -5px 5px gray,
+							-5px 5px 5px gray,
+							-5px -5px 5px gray;
+}
+
+.buttonActive {
+	opacity: 1;
+	box-shadow: 5px 5px 5px gray,
+							5px -5px 5px gray,
+							-5px 5px 5px gray,
+							-5px -5px 5px gray;
+}
+
+#green {
+	border-radius: 100%;
+	background: radial-gradient(#118d19, #35dd40);
+}
+
+
+#blue {
+	background: radial-gradient(#1f31bd, #4882ff)
+}
+
+#red {
+	border-radius: 100%;
+	width: 80px;
+	background: radial-gradient(#ab1818, #ee4141);
+}
+
+#yellow {
+	width: 75px;
+	background: radial-gradient(#cec501, #f6f060);
+}
+
+#testRun {
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	background: white;
+	opacity: 1;
+}
