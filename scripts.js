@@ -1,4 +1,4 @@
-$("#testRun").click(lightUp);
+$("#testRun").click(addToSequence);
 
 var simonClicks = [];
 var indexCounter = 0;
@@ -22,25 +22,27 @@ function displaySimonClicks() {
 			indexCounter = 0;
 		}
 	}, 1000);
-	
-
-
 }
 
-function lightUp() {
+function addToSequence() {
 	var newShape = randomShape();
 	simonClicks.push(newShape);
 
+	indexCounter = 0;
 	displaySimonClicks();
 }
 
 
 
 function checkClicks() {
-	if ($(this).attr("id") == simonClicks[indexCounter]) {
+	var waitingShape = simonClicks[indexCounter].attr("id");
+	if ($(this).attr("id") == waitingShape) {
 		console.log("correct");
 		indexCounter += 1;
-		console.log("simonClickedTimes =", simonClickedTimes);	
+
+		if (indexCounter >= simonClicks.length) {
+			setTimeout(addToSequence, 1000);
+		}	
 	}	else {
 		console.log("nope");
 		simonClicks = [];
