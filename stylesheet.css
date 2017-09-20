@@ -2,6 +2,10 @@ html {
 	background: black;
 }
 
+.titles {
+	color: white;
+}
+
 button {
 	width: 100px;
 	height: 100px;

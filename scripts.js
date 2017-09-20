@@ -3,6 +3,9 @@ $("#testRun").click(addToSequence);
 var simonClicks = [];
 var indexCounter = 0;
 
+var currentStreak = 0;
+var	longestStreak = 0;
+
 function randomShape() {
 	var random = Math.floor(Math.random()*$(".shape").length);
 	return $(".shape").eq(random);
@@ -30,8 +33,16 @@ function addToSequence() {
 
 	indexCounter = 0;
 	displaySimonClicks();
+	
 }
 
+function updateStreaks() {	
+	if (currentStreak > longestStreak) {
+		longestStreak = currentStreak;		
+	}
+	$("#currentStreak").text(currentStreak);
+	$("#longestStreak").text(longestStreak);
+}
 
 
 function checkClicks() {
@@ -41,12 +52,17 @@ function checkClicks() {
 		indexCounter += 1;
 
 		if (indexCounter >= simonClicks.length) {
+			currentStreak = simonClicks.length;
+			updateStreaks();
+
 			setTimeout(addToSequence, 1000);
 		}	
 	}	else {
 		console.log("nope");
 		simonClicks = [];
+		currentStreak = 0;
+		updateStreaks();
 	}
 }
 
-$(".shape").click(checkClicks);
+$(".shape").on("click", checkClicks);
