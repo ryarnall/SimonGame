@@ -1,10 +1,16 @@
-$("#testRun").click(addToSequence);
+$("#startGame").click(startGame);
+$("#playAgain").click(playAgain);
 
 var simonClicks = [];
 var indexCounter = 0;
 
 var currentStreak = 0;
 var	longestStreak = 0;
+
+function startGame() {
+	$("#startGame").fadeOut(800);
+	setTimeout(addToSequence, 1000);
+}
 
 //returns a random shape from the displayed shapes
 function randomShape() {
@@ -26,7 +32,7 @@ function displaySimonClicks() {
 		} else {
 			indexCounter = 0;
 		}
-	}, 1000);
+	}, 750);
 }
 
 //adds a new random shape to the sequence then calls function displaySimonClicks
@@ -65,17 +71,15 @@ function checkClicks() {
 		simonClicks = [];
 		currentStreak = 0;
 		updateStreaks();
-		$("#popUp").fadeIn();
+		$("#popUp").fadeIn(800);
 	}
 }
 
 //sets the click handler for the shapes
 $(".shape").on("click", checkClicks);
 
-
-$("#playAgain").click(newGame);
-
-function newGame() {
-	$("#popUp").fadeOut();
+//if "Play Again?" is clicked, box fades away and new game starts
+function playAgain() {
+	$("#popUp").fadeOut(800);
 	setTimeout(addToSequence, 1000);
 }

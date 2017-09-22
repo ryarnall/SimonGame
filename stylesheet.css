@@ -2,6 +2,20 @@ html {
 	background: black;
 }
 
+#shapesBox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	width: 250px;
+	height: 250px;
+	margin: auto;
+	z-index: -1;
+
+	border-radius: 20px;
+	border: 1px solid white;
+}
+
 .titles {
 	color: white;
 }
@@ -12,10 +26,9 @@ html {
 	outline: none;
 	border: none;
 	opacity: .5;
-	margin: 25px;
+	border-radius: 30px;
 }
-
-button:active {
+.shape:active {
 	opacity: 1;
 	box-shadow: 5px 5px 5px gray,
 							5px -5px 5px gray,
@@ -32,7 +45,6 @@ button:active {
 }
 
 #green {
-	border-radius: 100%;
 	background: radial-gradient(#118d19, #35dd40);
 }
 
@@ -42,23 +54,22 @@ button:active {
 }
 
 #red {
-	border-radius: 100%;
-	width: 80px;
 	background: radial-gradient(#ab1818, #ee4141);
 }
 
 #yellow {
-	width: 75px;
 	background: radial-gradient(#cec501, #f6f060);
 }
 
-#testRun {
-	width: 50px;
-	height: 50px;
-	border-radius: 10px;
+#startGame {
+	width: 75px;
+	height: 75px;
+	border-radius: 30px;
 	background: white;
-	opacity: 1;
 	outline: none;
+	position: absolute;
+	font-size: 20px;
+	font-weight: bold;
 }
 
 #popUp {
@@ -68,4 +79,19 @@ button:active {
 	background: gray;
 	text-align: center;
 	display: none;
+	position: absolute;
+}
+
+#popUpMessage {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+#playAgain {
+	height: 30px;
+	outline: none;
+	border: 1px solid black;
+
+	border-radius: 10px;
 }

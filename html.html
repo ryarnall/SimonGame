@@ -7,23 +7,29 @@
 
 
 	<body>
-		<button class="shape" id="green"></button>
-		<button class="shape" id="blue"></button>
-		<button class="shape" id="red"></button>
-		<button class="shape" id="yellow"></button>
+		<div id="mainContainer">
+			<div id="shapesBox">
+				<button class="shape" id="green"></button>
+				<button class="shape" id="blue"></button>
+				<button class="shape" id="red"></button>
+				<button class="shape" id="yellow"></button>
 
+				<button id="startGame">Start</button>
+				<div id="popUp">
+					<p id="popUpMessage">Game Over</p>
+					<button id="playAgain">Play Again?</button>
+				</div>
+			</div>
 
-		<button id="testRun">Start</button>
+			
 
-		<div class="titles">Current Streak:
-			<p id="currentStreak">0</p>
-		</div>
-		<div class="titles">Longest Streak:
-			<p id="longestStreak">0</p>
-		</div>
+			<div class="titles">Current Streak:
+				<p id="currentStreak">0</p>
+			</div>
+			<div class="titles">Longest Streak:
+				<p id="longestStreak">0</p>
+			</div>
 
-		<div id="popUp">Game Over
-			<button id="playAgain">Play Again?</button>
 		</div>
 
 		<script src="jquery-3.2.1.min.js"></script>
