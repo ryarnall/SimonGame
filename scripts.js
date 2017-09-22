@@ -65,8 +65,17 @@ function checkClicks() {
 		simonClicks = [];
 		currentStreak = 0;
 		updateStreaks();
+		$("#popUp").fadeIn();
 	}
 }
 
 //sets the click handler for the shapes
 $(".shape").on("click", checkClicks);
+
+
+$("#playAgain").click(newGame);
+
+function newGame() {
+	$("#popUp").fadeOut();
+	setTimeout(addToSequence, 1000);
+}

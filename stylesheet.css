@@ -6,7 +6,7 @@ html {
 	color: white;
 }
 
-button {
+.shape {
 	width: 100px;
 	height: 100px;
 	outline: none;
@@ -58,4 +58,14 @@ button:active {
 	border-radius: 10px;
 	background: white;
 	opacity: 1;
+	outline: none;
+}
+
+#popUp {
+	width: 200px;
+	height: 100px;
+	border-radius: 20px;
+	background: gray;
+	text-align: center;
+	display: none;
 }
