@@ -28,6 +28,7 @@ html {
 	opacity: .5;
 	border-radius: 30px;
 }
+
 .shape:active {
 	opacity: 1;
 	box-shadow: 5px 5px 5px gray,
@@ -92,6 +93,5 @@ html {
 	height: 30px;
 	outline: none;
 	border: 1px solid black;
-
 	border-radius: 10px;
 }

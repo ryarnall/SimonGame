@@ -31,6 +31,7 @@ function displaySimonClicks() {
 			setTimeout(displaySimonClicks, 500);
 		} else {
 			indexCounter = 0;
+			$(".shape").on("click", checkClicks).prop("disabled", false);
 		}
 	}, 750);
 }
@@ -55,28 +56,31 @@ function updateStreaks() {
 
 //checks if the user clicked space matches the next in the sequence
 function checkClicks() {
+
 	var waitingShape = simonClicks[indexCounter].attr("id");
 
 	if ($(this).attr("id") == waitingShape) {
-		console.log("correct");
 		indexCounter += 1;
 		if (indexCounter >= simonClicks.length) {
 			currentStreak = simonClicks.length;
+			
 			updateStreaks();
+			$(".shape").off("click", checkClicks).prop("disabled", true);;
 			setTimeout(addToSequence, 1000);
 		}	
 
 	}	else {
-		console.log("nope");
 		simonClicks = [];
 		currentStreak = 0;
+
 		updateStreaks();
+		$(".shape").off("click", checkClicks).prop("disabled", true);;
 		$("#popUp").fadeIn(800);
 	}
 }
 
 //sets the click handler for the shapes
-$(".shape").on("click", checkClicks);
+// $(".shape").on("click", checkClicks);
 
 //if "Play Again?" is clicked, box fades away and new game starts
 function playAgain() {
